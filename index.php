@@ -1,3 +1,6 @@
+<?php
+$root_node = 'R'; // Set root node
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +22,7 @@
             <form method="post">
                 <div class="form-group">
                     <label for="gender">What is your answer to Question 1?</label>
-                    <select class="form-control" id="Q" name="Q" required>
+                    <select class="form-control" id="<?= $root_node ?>" name="<?= $root_node ?>" required>
                         <option disabled selected></option>
                         <option value="1">Yes</option>
                         <option value="2">No</option>
@@ -28,12 +31,12 @@
                 <button type="submit" class="btn btn-primary" name="submit">Submit</button>
             </form>
 <?php endif ?>
-<?php if ($_POST['Q'] == "1") : ?>
+<?php if ($_POST[$root_node] == "1") : ?>
             <form method="post">
                 <div class="form-group">
                     <label for="gender">Your previous answer is Yes.<br />
                     What is your answer to Question 2?</label>
-                    <select class="form-control" id="Q-1" name="Q-1" required>
+                    <select class="form-control" id="<?= $root_node ?>-1" name="<?= $root_node ?>-1" required>
                         <option disabled selected></option>
                         <option value="1">Yes</option>
                         <option value="2">No</option>
@@ -42,12 +45,12 @@
                 <button type="submit" class="btn btn-primary" name="submit">Submit</button>
             </form>
 <?php endif ?>
-<?php if ($_POST['Q'] == "2") : ?>
+<?php if ($_POST[$root_node] == "2") : ?>
             <form method="post">
                 <div class="form-group">
                     <label for="gender">Your previous answer is No.<br />
                     What is your answer to Question 2?</label>
-                    <select class="form-control" id="Q-2" name="Q-2" required>
+                    <select class="form-control" id="<?= $root_node ?>-2" name="<?= $root_node ?>-2" required>
                         <option disabled selected></option>
                         <option value="1">Yes</option>
                         <option value="2">No</option>
@@ -56,12 +59,12 @@
                 <button type="submit" class="btn btn-primary" name="submit">Submit</button>
             </form>
 <?php endif ?>
-<?php if ($_POST['Q-1'] == "1") : ?>
+<?php if ($_POST[$root_node . '-1'] == "1") : ?>
             <form method="post">
                 <div class="form-group">
                 <label for="gender">Your previous answer is Yes.<br />
                 What is your answer to Question 3?</label>
-                <select class="form-control" id="Q-1-1" name="Q-1-1" required>
+                <select class="form-control" id="<?= $root_node ?>-1-1" name="<?= $root_node ?>-1-1" required>
                     <option disabled selected></option>
                     <option value="1">Yes</option>
                     <option value="2">No</option>
@@ -70,12 +73,12 @@
                 <button type="submit" class="btn btn-primary" name="submit">Submit</button>
             </form>
 <?php endif ?>
-<?php if ($_POST['Q-1'] == "2") : ?>
+<?php if ($_POST[$root_node . '-1'] == "2") : ?>
             <form method="post">
                 <div class="form-group">
                 <label for="gender">Your previous answer is No.<br />
                 What is your answer to Question 3?</label>
-                <select class="form-control" id="Q-1-2" name="Q-1-2" required>
+                <select class="form-control" id="<?= $root_node ?>-1-2" name="<?= $root_node ?>-1-2" required>
                     <option disabled selected></option>
                     <option value="1">Yes</option>
                     <option value="2">No</option>
@@ -84,12 +87,12 @@
                 <button type="submit" class="btn btn-primary" name="submit">Submit</button>
             </form>
 <?php endif ?>
-<?php if ($_POST['Q-2'] == "1") : ?>
+<?php if ($_POST[$root_node . '-2'] == "1") : ?>
             <form method="post">
                 <div class="form-group">
                 <label for="gender">Your previous answer is Yes.<br />
                 What is your answer to Question 3?</label>
-                <select class="form-control" id="Q-2-1" name="Q-2-1" required>
+                <select class="form-control" id="<?= $root_node ?>-2-1" name="<?= $root_node ?>-2-1" required>
                     <option disabled selected></option>
                     <option value="1">Yes</option>
                     <option value="2">No</option>
@@ -98,12 +101,12 @@
                 <button type="submit" class="btn btn-primary" name="submit">Submit</button>
             </form>
 <?php endif ?>
-<?php if ($_POST['Q-2'] == "2") : ?>
+<?php if ($_POST[$root_node . '-2'] == "2") : ?>
             <form method="post">
                 <div class="form-group">
                 <label for="gender">Your previous answer is No.<br />
                 What is your answer to Question 3?</label>
-                <select class="form-control" id="Q-2-2" name="Q-2-2" required>
+                <select class="form-control" id="<?= $root_node ?>-2-2" name="<?= $root_node ?>-2-2" required>
                     <option disabled selected></option>
                     <option value="1">Yes</option>
                     <option value="2">No</option>
@@ -112,42 +115,42 @@
                 <button type="submit" class="btn btn-primary" name="submit">Submit</button>
             </form>
 <?php endif ?>
-<?php if ($_POST['Q-1-1'] == "1") : ?>
+<?php if ($_POST[$root_node . '-1-1'] == "1") : ?>
             Your answer for Question 1 is Yes.<br />
             Your answer for Question 2 is Yes.<br />
             Your answer for Question 3 is Yes.
 <?php endif ?>
-<?php if ($_POST['Q-1-1'] == "2") : ?>
+<?php if ($_POST[$root_node . '-1-1'] == "2") : ?>
             Your answer for Question 1 is Yes.<br />
             Your answer for Question 2 is Yes.<br />
             Your answer for Question 3 is No.
 <?php endif ?>
-<?php if ($_POST['Q-1-2'] == "1") : ?>
+<?php if ($_POST[$root_node . '-1-2'] == "1") : ?>
             Your answer for Question 1 is Yes.<br />
             Your answer for Question 2 is No.<br />
             Your answer for Question 3 is Yes.
 <?php endif ?>
-<?php if ($_POST['Q-1-2'] == "2") : ?>
+<?php if ($_POST[$root_node . '-1-2'] == "2") : ?>
             Your answer for Question 1 is Yes.<br />
             Your answer for Question 2 is No.<br />
             Your answer for Question 3 is No.
 <?php endif ?>
-<?php if ($_POST['Q-2-1'] == "1") : ?>
+<?php if ($_POST[$root_node . '-2-1'] == "1") : ?>
             Your answer for Question 1 is No.<br />
             Your answer for Question 2 is Yes.<br />
             Your answer for Question 3 is Yes.
 <?php endif ?>
-<?php if ($_POST['Q-2-1'] == "2") : ?>
+<?php if ($_POST[$root_node . '-2-1'] == "2") : ?>
             Your answer for Question 1 is No.<br />
             Your answer for Question 2 is Yes.<br />
             Your answer for Question 3 is No.
 <?php endif ?>
-<?php if ($_POST['Q-2-2'] == "1") : ?>
+<?php if ($_POST[$root_node . '-2-2'] == "1") : ?>
             Your answer for Question 1 is No.<br />
             Your answer for Question 2 is No.<br />
             Your answer for Question 3 is Yes.
 <?php endif ?>
-<?php if ($_POST['Q-2-2'] == "2") : ?>
+<?php if ($_POST[$root_node . '-2-2'] == "2") : ?>
             Your answer for Question 1 is No.<br />
             Your answer for Question 2 is No.<br />
             Your answer for Question 3 is No.
