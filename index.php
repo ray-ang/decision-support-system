@@ -30,8 +30,7 @@ $root_node = 'R'; // Set root node
                 </div>
                 <button type="submit" class="btn btn-primary" name="submit">Submit</button>
             </form>
-<?php endif ?>
-<?php if ($_POST[$root_node] == "1") : ?>
+<?php elseif ($_POST[$root_node] == "1") : ?>
             <form method="post">
                 <div class="form-group">
                     <label for="gender">Your previous answer is Yes.<br />
@@ -44,8 +43,7 @@ $root_node = 'R'; // Set root node
                 </div>
                 <button type="submit" class="btn btn-primary" name="submit">Submit</button>
             </form>
-<?php endif ?>
-<?php if ($_POST[$root_node] == "2") : ?>
+<?php elseif ($_POST[$root_node] == "2") : ?>
             <form method="post">
                 <div class="form-group">
                     <label for="gender">Your previous answer is No.<br />
@@ -58,8 +56,7 @@ $root_node = 'R'; // Set root node
                 </div>
                 <button type="submit" class="btn btn-primary" name="submit">Submit</button>
             </form>
-<?php endif ?>
-<?php if ($_POST[$root_node . '-1'] == "1") : ?>
+<?php elseif ($_POST[$root_node . '-1'] == "1") : ?>
             <form method="post">
                 <div class="form-group">
                 <label for="gender">Your previous answer is Yes.<br />
@@ -72,8 +69,7 @@ $root_node = 'R'; // Set root node
                 </div>
                 <button type="submit" class="btn btn-primary" name="submit">Submit</button>
             </form>
-<?php endif ?>
-<?php if ($_POST[$root_node . '-1'] == "2") : ?>
+<?php elseif ($_POST[$root_node . '-1'] == "2") : ?>
             <form method="post">
                 <div class="form-group">
                 <label for="gender">Your previous answer is No.<br />
@@ -86,8 +82,7 @@ $root_node = 'R'; // Set root node
                 </div>
                 <button type="submit" class="btn btn-primary" name="submit">Submit</button>
             </form>
-<?php endif ?>
-<?php if ($_POST[$root_node . '-2'] == "1") : ?>
+<?php elseif ($_POST[$root_node . '-2'] == "1") : ?>
             <form method="post">
                 <div class="form-group">
                 <label for="gender">Your previous answer is Yes.<br />
@@ -100,8 +95,7 @@ $root_node = 'R'; // Set root node
                 </div>
                 <button type="submit" class="btn btn-primary" name="submit">Submit</button>
             </form>
-<?php endif ?>
-<?php if ($_POST[$root_node . '-2'] == "2") : ?>
+<?php elseif ($_POST[$root_node . '-2'] == "2") : ?>
             <form method="post">
                 <div class="form-group">
                 <label for="gender">Your previous answer is No.<br />
@@ -114,46 +108,40 @@ $root_node = 'R'; // Set root node
                 </div>
                 <button type="submit" class="btn btn-primary" name="submit">Submit</button>
             </form>
-<?php endif ?>
-<?php if ($_POST[$root_node . '-1-1'] == "1") : ?>
+<?php elseif ($_POST[$root_node . '-1-1'] == "1") : ?>
             Your answer for Question 1 is Yes.<br />
             Your answer for Question 2 is Yes.<br />
             Your answer for Question 3 is Yes.
-<?php endif ?>
-<?php if ($_POST[$root_node . '-1-1'] == "2") : ?>
+<?php elseif ($_POST[$root_node . '-1-1'] == "2") : ?>
             Your answer for Question 1 is Yes.<br />
             Your answer for Question 2 is Yes.<br />
             Your answer for Question 3 is No.
-<?php endif ?>
-<?php if ($_POST[$root_node . '-1-2'] == "1") : ?>
+<?php elseif ($_POST[$root_node . '-1-2'] == "1") : ?>
             Your answer for Question 1 is Yes.<br />
             Your answer for Question 2 is No.<br />
             Your answer for Question 3 is Yes.
-<?php endif ?>
-<?php if ($_POST[$root_node . '-1-2'] == "2") : ?>
+<?php elseif ($_POST[$root_node . '-1-2'] == "2") : ?>
             Your answer for Question 1 is Yes.<br />
             Your answer for Question 2 is No.<br />
             Your answer for Question 3 is No.
-<?php endif ?>
-<?php if ($_POST[$root_node . '-2-1'] == "1") : ?>
+<?php elseif ($_POST[$root_node . '-2-1'] == "1") : ?>
             Your answer for Question 1 is No.<br />
             Your answer for Question 2 is Yes.<br />
             Your answer for Question 3 is Yes.
-<?php endif ?>
-<?php if ($_POST[$root_node . '-2-1'] == "2") : ?>
+<?php elseif ($_POST[$root_node . '-2-1'] == "2") : ?>
             Your answer for Question 1 is No.<br />
             Your answer for Question 2 is Yes.<br />
             Your answer for Question 3 is No.
-<?php endif ?>
-<?php if ($_POST[$root_node . '-2-2'] == "1") : ?>
+<?php elseif ($_POST[$root_node . '-2-2'] == "1") : ?>
             Your answer for Question 1 is No.<br />
             Your answer for Question 2 is No.<br />
             Your answer for Question 3 is Yes.
-<?php endif ?>
-<?php if ($_POST[$root_node . '-2-2'] == "2") : ?>
-            Your answer for Question 1 is No.<br />
+<?php // elseif ($_POST[$root_node . '-2-2'] == "2") : ?>
+            <!-- Your answer for Question 1 is No.<br />
             Your answer for Question 2 is No.<br />
-            Your answer for Question 3 is No.
+            Your answer for Question 3 is No. -->
+<?php else : ?>
+            Sorry. No leaf node for this particular branch node.
 <?php endif ?>
         </div>
         <div class="col-md"></div>
