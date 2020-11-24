@@ -1,6 +1,3 @@
-<?php
-$root_node = 'R'; // Set root node
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,130 +15,152 @@ $root_node = 'R'; // Set root node
     <h2 style="margin-bottom: 30px;">Decision Support System</h3>
     <div class="row">
         <div class="col-md">
-<?php if (! isset($_POST['submit'])) : ?>
-            <form method="post">
-                <div class="form-group">
-                    <label>What is your answer to Question 1?</label>
-                    <select class="form-control" id="<?= $root_node ?>" name="<?= $root_node ?>" required>
-                        <option disabled selected></option>
-                        <option value="1">Yes</option>
-                        <option value="2">No</option>
-                    </select>
-                </div>
-                <button type="submit" class="btn btn-primary" name="submit">Submit</button>
-            </form>
-<?php elseif ($_POST[$root_node] == "1") : ?>
-            <form method="post">
-                <div class="form-group">
-                    <label>Your previous answer is Yes.<br />
-                    What is your answer to Question 2?</label>
-                    <select class="form-control" id="<?= $root_node ?>-1" name="<?= $root_node ?>-1" required>
-                        <option disabled selected></option>
-                        <option value="1">Yes</option>
-                        <option value="2">No</option>
-                    </select>
-                </div>
-                <button type="submit" class="btn btn-primary" name="submit">Submit</button>
-            </form>
-<?php elseif ($_POST[$root_node] == "2") : ?>
-            <form method="post">
-                <div class="form-group">
-                    <label>Your previous answer is No.<br />
-                    What is your answer to Question 2?</label>
-                    <select class="form-control" id="<?= $root_node ?>-2" name="<?= $root_node ?>-2" required>
-                        <option disabled selected></option>
-                        <option value="1">Yes</option>
-                        <option value="2">No</option>
-                    </select>
-                </div>
-                <button type="submit" class="btn btn-primary" name="submit">Submit</button>
-            </form>
-<?php elseif ($_POST[$root_node . '-1'] == "1") : ?>
-            <form method="post">
-                <div class="form-group">
-                <label>Your previous answer is Yes.<br />
-                What is your answer to Question 3?</label>
-                <select class="form-control" id="<?= $root_node ?>-1-1" name="<?= $root_node ?>-1-1" required>
-                    <option disabled selected></option>
-                    <option value="1">Yes</option>
-                    <option value="2">No</option>
-                </select>
-                </div>
-                <button type="submit" class="btn btn-primary" name="submit">Submit</button>
-            </form>
-<?php elseif ($_POST[$root_node . '-1'] == "2") : ?>
-            <form method="post">
-                <div class="form-group">
-                <label>Your previous answer is No.<br />
-                What is your answer to Question 3?</label>
-                <select class="form-control" id="<?= $root_node ?>-1-2" name="<?= $root_node ?>-1-2" required>
-                    <option disabled selected></option>
-                    <option value="1">Yes</option>
-                    <option value="2">No</option>
-                </select>
-                </div>
-                <button type="submit" class="btn btn-primary" name="submit">Submit</button>
-            </form>
-<?php elseif ($_POST[$root_node . '-2'] == "1") : ?>
-            <form method="post">
-                <div class="form-group">
-                <label>Your previous answer is Yes.<br />
-                What is your answer to Question 3?</label>
-                <select class="form-control" id="<?= $root_node ?>-2-1" name="<?= $root_node ?>-2-1" required>
-                    <option disabled selected></option>
-                    <option value="1">Yes</option>
-                    <option value="2">No</option>
-                </select>
-                </div>
-                <button type="submit" class="btn btn-primary" name="submit">Submit</button>
-            </form>
-<?php elseif ($_POST[$root_node . '-2'] == "2") : ?>
-            <form method="post">
-                <div class="form-group">
-                <label>Your previous answer is No.<br />
-                What is your answer to Question 3?</label>
-                <select class="form-control" id="<?= $root_node ?>-2-2" name="<?= $root_node ?>-2-2" required>
-                    <option disabled selected></option>
-                    <option value="1">Yes</option>
-                    <option value="2">No</option>
-                </select>
-                </div>
-                <button type="submit" class="btn btn-primary" name="submit">Submit</button>
-            </form>
-<?php elseif ($_POST[$root_node . '-1-1'] == "1") : ?>
-            Your answer for Question 1 is Yes.<br />
-            Your answer for Question 2 is Yes.<br />
-            Your answer for Question 3 is Yes.
-<?php elseif ($_POST[$root_node . '-1-1'] == "2") : ?>
-            Your answer for Question 1 is Yes.<br />
-            Your answer for Question 2 is Yes.<br />
-            Your answer for Question 3 is No.
-<?php elseif ($_POST[$root_node . '-1-2'] == "1") : ?>
-            Your answer for Question 1 is Yes.<br />
-            Your answer for Question 2 is No.<br />
-            Your answer for Question 3 is Yes.
-<?php elseif ($_POST[$root_node . '-1-2'] == "2") : ?>
-            Your answer for Question 1 is Yes.<br />
-            Your answer for Question 2 is No.<br />
-            Your answer for Question 3 is No.
-<?php elseif ($_POST[$root_node . '-2-1'] == "1") : ?>
-            Your answer for Question 1 is No.<br />
-            Your answer for Question 2 is Yes.<br />
-            Your answer for Question 3 is Yes.
-<?php elseif ($_POST[$root_node . '-2-1'] == "2") : ?>
-            Your answer for Question 1 is No.<br />
-            Your answer for Question 2 is Yes.<br />
-            Your answer for Question 3 is No.
-<?php elseif ($_POST[$root_node . '-2-2'] == "1") : ?>
-            Your answer for Question 1 is No.<br />
-            Your answer for Question 2 is No.<br />
-            Your answer for Question 3 is Yes.
-<?php // elseif ($_POST[$root_node . '-2-2'] == "2") : ?>
-            <!-- Your answer for Question 1 is No.<br />
-            Your answer for Question 2 is No.<br />
-            Your answer for Question 3 is No. -->
-<?php else : ?>
-            Sorry. No leaf node for this particular branch node.
+<?php
+$root_1 = 'R1'; // Main root
+$root_node = $root_1; // Set root node
+?>
+<?php if ($root_node == $root_1) : ?>
+	<?php if (! isset($_POST['submit'])) : ?>
+	            <script>document.cookie = 'root=<?= $root_1 ?>';</script>
+	            <form method="post">
+	                <div class="form-group">
+	                    <label>What is your answer to Question 1?</label>
+	                    <select class="form-control" id="<?= $root_node ?>" name="<?= $root_node ?>" required>
+	                        <option disabled selected></option>
+	                        <option value="1">Yes</option>
+	                        <option value="2">No</option>
+	                    </select>
+	                </div>
+	                <button type="submit" class="btn btn-primary" name="submit">Submit</button>
+	            </form>
+	<?php elseif ($_POST[$root_node] == "1") : ?>
+	            <script>document.cookie = 'root=<?= $root_1 ?>';</script>
+	            <form method="post">
+	                <div class="form-group">
+	                    <label>Your previous answer is Yes.<br />
+	                    What is your answer to Question 2?</label>
+	                    <select class="form-control" id="<?= $root_node ?>-1" name="<?= $root_node ?>-1" required>
+	                        <option disabled selected></option>
+	                        <option value="1">Yes</option>
+	                        <option value="2">No</option>
+	                    </select>
+	                </div>
+	                <button type="submit" class="btn btn-primary" name="submit">Submit</button>
+	            </form>
+	<?php elseif ($_POST[$root_node] == "2") : ?>
+	            <script>document.cookie = 'root=<?= $root_1 ?>';</script>
+	            <form method="post">
+	                <div class="form-group">
+	                    <label>Your previous answer is No.<br />
+	                    What is your answer to Question 2?</label>
+	                    <select class="form-control" id="<?= $root_node ?>-2" name="<?= $root_node ?>-2" required>
+	                        <option disabled selected></option>
+	                        <option value="1">Yes</option>
+	                        <option value="2">No</option>
+	                    </select>
+	                </div>
+	                <button type="submit" class="btn btn-primary" name="submit">Submit</button>
+	            </form>
+	<?php elseif ($_POST[$root_node . '-1'] == "1") : ?>
+	            <script>document.cookie = 'root=<?= $root_1 ?>';</script>
+	            <form method="post">
+	                <div class="form-group">
+	                <label>Your previous answer is Yes.<br />
+	                What is your answer to Question 3?</label>
+	                <select class="form-control" id="<?= $root_node ?>-1-1" name="<?= $root_node ?>-1-1" required>
+	                    <option disabled selected></option>
+	                    <option value="1">Yes</option>
+	                    <option value="2">No</option>
+	                </select>
+	                </div>
+	                <button type="submit" class="btn btn-primary" name="submit">Submit</button>
+	            </form>
+	<?php elseif ($_POST[$root_node . '-1'] == "2") : ?>
+	            <script>document.cookie = 'root=<?= $root_1 ?>';</script>
+	            <form method="post">
+	                <div class="form-group">
+	                <label>Your previous answer is No.<br />
+	                What is your answer to Question 3?</label>
+	                <select class="form-control" id="<?= $root_node ?>-1-2" name="<?= $root_node ?>-1-2" required>
+	                    <option disabled selected></option>
+	                    <option value="1">Yes</option>
+	                    <option value="2">No</option>
+	                </select>
+	                </div>
+	                <button type="submit" class="btn btn-primary" name="submit">Submit</button>
+	            </form>
+	<?php elseif ($_POST[$root_node . '-2'] == "1") : ?>
+	            <script>document.cookie = 'root=<?= $root_1 ?>';</script>
+	            <form method="post">
+	                <div class="form-group">
+	                <label>Your previous answer is Yes.<br />
+	                What is your answer to Question 3?</label>
+	                <select class="form-control" id="<?= $root_node ?>-2-1" name="<?= $root_node ?>-2-1" required>
+	                    <option disabled selected></option>
+	                    <option value="1">Yes</option>
+	                    <option value="2">No</option>
+	                </select>
+	                </div>
+	                <button type="submit" class="btn btn-primary" name="submit">Submit</button>
+	            </form>
+	<?php elseif ($_POST[$root_node . '-2'] == "2") : ?>
+	            <script>document.cookie = 'root=<?= $root_1 ?>';</script>
+	            <form method="post">
+	                <div class="form-group">
+	                <label>Your previous answer is No.<br />
+	                What is your answer to Question 3?</label>
+	                <select class="form-control" id="<?= $root_node ?>-2-2" name="<?= $root_node ?>-2-2" required>
+	                    <option disabled selected></option>
+	                    <option value="1">Yes</option>
+	                    <option value="2">No</option>
+	                </select>
+	                </div>
+	                <button type="submit" class="btn btn-primary" name="submit">Submit</button>
+	            </form>
+	<?php elseif ($_POST[$root_node . '-1-1'] == "1") : ?>
+	            <script>document.cookie = 'root=<?= $root_1 ?>';</script>
+	            Your answer for Question 1 is Yes.<br />
+	            Your answer for Question 2 is Yes.<br />
+	            Your answer for Question 3 is Yes.
+	<?php elseif ($_POST[$root_node . '-1-1'] == "2") : ?>
+	            <script>document.cookie = 'root=<?= $root_1 ?>';</script>
+	            Your answer for Question 1 is Yes.<br />
+	            Your answer for Question 2 is Yes.<br />
+	            Your answer for Question 3 is No.
+	<?php elseif ($_POST[$root_node . '-1-2'] == "1") : ?>
+	            <script>document.cookie = 'root=<?= $root_1 ?>';</script>
+	            Your answer for Question 1 is Yes.<br />
+	            Your answer for Question 2 is No.<br />
+	            Your answer for Question 3 is Yes.
+	<?php elseif ($_POST[$root_node . '-1-2'] == "2") : ?>
+	            <script>document.cookie = 'root=<?= $root_1 ?>';</script>
+	            Your answer for Question 1 is Yes.<br />
+	            Your answer for Question 2 is No.<br />
+	            Your answer for Question 3 is No.
+	<?php elseif ($_POST[$root_node . '-2-1'] == "1") : ?>
+	            <script>document.cookie = 'root=<?= $root_1 ?>';</script>
+	            Your answer for Question 1 is No.<br />
+	            Your answer for Question 2 is Yes.<br />
+	            Your answer for Question 3 is Yes.
+	<?php elseif ($_POST[$root_node . '-2-1'] == "2") : ?>
+	            <script>document.cookie = 'root=<?= $root_1 ?>';</script>
+	            Your answer for Question 1 is No.<br />
+	            Your answer for Question 2 is Yes.<br />
+	            Your answer for Question 3 is No.
+	<?php elseif ($_POST[$root_node . '-2-2'] == "1") : ?>
+	            <script>document.cookie = 'root=<?= $root_1 ?>';</script>
+	            Your answer for Question 1 is No.<br />
+	            Your answer for Question 2 is No.<br />
+	            Your answer for Question 3 is Yes.
+	<?php // elseif ($_POST[$root_node . '-2-2'] == "2") : ?>
+	            <!-- <script>document.cookie = 'root=<?= $root_1 ?>';</script>
+	            Your answer for Question 1 is No.<br />
+	            Your answer for Question 2 is No.<br />
+	            Your answer for Question 3 is No. -->
+	<?php else : ?>
+				<script>document.cookie = 'root=<?= $root_1 ?>';</script>
+	            Sorry. No leaf node for this particular branch node.
+	<?php endif ?>
 <?php endif ?>
         </div>
         <div class="col-md"></div>
