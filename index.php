@@ -21,7 +21,7 @@ $root_node = 'R'; // Set root node
 <?php if (! isset($_POST['submit'])) : ?>
             <form method="post">
                 <div class="form-group">
-                    <label for="gender">What is your answer to Question 1?</label>
+                    <label>What is your answer to Question 1?</label>
                     <select class="form-control" id="<?= $root_node ?>" name="<?= $root_node ?>" required>
                         <option disabled selected></option>
                         <option value="1">Yes</option>
@@ -33,7 +33,7 @@ $root_node = 'R'; // Set root node
 <?php elseif ($_POST[$root_node] == "1") : ?>
             <form method="post">
                 <div class="form-group">
-                    <label for="gender">Your previous answer is Yes.<br />
+                    <label>Your previous answer is Yes.<br />
                     What is your answer to Question 2?</label>
                     <select class="form-control" id="<?= $root_node ?>-1" name="<?= $root_node ?>-1" required>
                         <option disabled selected></option>
@@ -46,7 +46,7 @@ $root_node = 'R'; // Set root node
 <?php elseif ($_POST[$root_node] == "2") : ?>
             <form method="post">
                 <div class="form-group">
-                    <label for="gender">Your previous answer is No.<br />
+                    <label>Your previous answer is No.<br />
                     What is your answer to Question 2?</label>
                     <select class="form-control" id="<?= $root_node ?>-2" name="<?= $root_node ?>-2" required>
                         <option disabled selected></option>
@@ -59,7 +59,7 @@ $root_node = 'R'; // Set root node
 <?php elseif ($_POST[$root_node . '-1'] == "1") : ?>
             <form method="post">
                 <div class="form-group">
-                <label for="gender">Your previous answer is Yes.<br />
+                <label>Your previous answer is Yes.<br />
                 What is your answer to Question 3?</label>
                 <select class="form-control" id="<?= $root_node ?>-1-1" name="<?= $root_node ?>-1-1" required>
                     <option disabled selected></option>
@@ -72,7 +72,7 @@ $root_node = 'R'; // Set root node
 <?php elseif ($_POST[$root_node . '-1'] == "2") : ?>
             <form method="post">
                 <div class="form-group">
-                <label for="gender">Your previous answer is No.<br />
+                <label>Your previous answer is No.<br />
                 What is your answer to Question 3?</label>
                 <select class="form-control" id="<?= $root_node ?>-1-2" name="<?= $root_node ?>-1-2" required>
                     <option disabled selected></option>
@@ -85,7 +85,7 @@ $root_node = 'R'; // Set root node
 <?php elseif ($_POST[$root_node . '-2'] == "1") : ?>
             <form method="post">
                 <div class="form-group">
-                <label for="gender">Your previous answer is Yes.<br />
+                <label>Your previous answer is Yes.<br />
                 What is your answer to Question 3?</label>
                 <select class="form-control" id="<?= $root_node ?>-2-1" name="<?= $root_node ?>-2-1" required>
                     <option disabled selected></option>
@@ -98,7 +98,7 @@ $root_node = 'R'; // Set root node
 <?php elseif ($_POST[$root_node . '-2'] == "2") : ?>
             <form method="post">
                 <div class="form-group">
-                <label for="gender">Your previous answer is No.<br />
+                <label>Your previous answer is No.<br />
                 What is your answer to Question 3?</label>
                 <select class="form-control" id="<?= $root_node ?>-2-2" name="<?= $root_node ?>-2-2" required>
                     <option disabled selected></option>
