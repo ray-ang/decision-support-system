@@ -158,7 +158,7 @@ $root_node = $root_1; // Set root node
 	            Your answer for Question 2 is No.<br />
 	            Your answer for Question 3 is No. -->
 	<?php else : ?>
-				<script>document.cookie = 'root=<?= $root_1 ?>';</script>
+	            <script>document.cookie = 'root=<?= $root_1 ?>';</script>
 	            Sorry. No leaf node for this particular branch node.
 	<?php endif ?>
 <?php endif ?>
